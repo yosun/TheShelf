@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ae018917241e6a740943768b05b47d55
+labels:
+- SSS
+- screenspace
+- space
+- screen
+- scattering
+- subsurface
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
