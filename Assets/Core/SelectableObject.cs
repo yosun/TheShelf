@@ -16,6 +16,7 @@ public class SelectableObject : MonoBehaviour {
 			if(ipc.GetConfidence()>50){
 				if(ipc.GetOpenness()<5&&ipc.GetOpenness()>=0){
 					tsm.SetCurrent(this.gameObject);
+					ActivateFurtherActions();
 				}else if(ipc.GetOpenness()>85){
 					tsm.PutBack();
 					return;
@@ -26,6 +27,11 @@ public class SelectableObject : MonoBehaviour {
 				transform.position = col.transform.position;
 			}
 		}
+	}
+	
+	void ActivateFurtherActions(){
+		// activate child gameobject for further action	
+		
 	}
 	
 }

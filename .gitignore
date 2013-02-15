@@ -1,6 +1,9 @@
 Thumbs.db
 Temp/
 Library/*
+Assets/Shaders
+Assets/HardSurfaceFree
+Assets/ChickensShaderBundle
 !Library/EditorBuildSettings.asset
 !Library/InputManager.asset
 !Library/ProjectSettings.asset

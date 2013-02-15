@@ -1,13 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\Program Files (x86)\Intel\PCSDK\demo\GlassBalls\Assets\Scripts\ShadowHand.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument=".gitignore">
     <Files>
       <File FileName="..\..\..\..\Program Files (x86)\Intel\PCSDK\demo\GlassBalls\Assets\Scripts\ShadowHand.cs" Line="55" Column="5" />
+      <File FileName=".gitignore" Line="5" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="C:\Users\yosun-win8\Documents\TheShelf\Assets\Core\TheShelfManager.cs" line="17" />
+      <Breakpoint file="C:\Users\yosun-win8\Documents\TheShelf\Assets\Core\SelectableObject.cs" line="33" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
