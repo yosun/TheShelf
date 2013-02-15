@@ -16,8 +16,12 @@ public class ThePrimitives : MonoBehaviour {
 	void Update(){
 		string s = PrimitivesDictionary.SanitizeDictation(ipc.GetDictation ());
 		if(s!="DUNNO"){
+			print ("Finding "+s);
 			GameObject go = goParent.transform.Find (s).gameObject;	
-			tsm.SetCurrent(go);
+			ipc.ResetDictation();
+			if(go!=null){
+				tsm.SetCurrent(go);
+			}
 		}
 	}
 	

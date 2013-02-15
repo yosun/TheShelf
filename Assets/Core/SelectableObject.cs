@@ -11,22 +11,33 @@ public class SelectableObject : MonoBehaviour {
 		tsm = GameObject.Find ("GameObject").GetComponent<TheShelfManager>();
 	}
 	
-	void OnTriggerStay(Collider col){
+	void OnTriggerStay(Collider col){//print (col.name);
 		if(col.name=="SelectorCollider"){
-			if(ipc.GetConfidence()>50){
-				if(ipc.GetOpenness()<5&&ipc.GetOpenness()>=0){
-					tsm.SetCurrent(this.gameObject);
-					ActivateFurtherActions();
-				}else if(ipc.GetOpenness()>85){
+			//if(ipc.GetConfidence()>50){
+				if(ipc.GetClosedCertain()){
+					SelectThisObject ();
+				}else if(ipc.GetOpenCertain()){
 					tsm.PutBack();
 					return;
 				}
-			}
-			if(tsm.GetCurrentObj()==this.gameObject){
-				transform.forward = ipc.GetNormal ();
-				transform.position = col.transform.position;
-			}
+			//}
 		}
+	}
+	
+	void Update(){
+			if(tsm.GetCurrentObj()==this.gameObject){
+				
+				//transform.position = col.transform.position;
+				if(ipc.GetOpenCertain()){
+					tsm.PutBack();
+					return;
+				}
+			}		
+	}
+	
+	public void SelectThisObject(){
+		tsm.SetCurrent(this.gameObject);
+		ActivateFurtherActions();
 	}
 	
 	void ActivateFurtherActions(){

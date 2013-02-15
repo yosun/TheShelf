@@ -16,6 +16,8 @@ public class IntelPerC : MonoBehaviour {
 	Vector3 worldPosition=Vector3.zero;
 	Vector3 normal=Vector3.zero;
 	
+	bool cameraFound=false;
+	
 	int[] labels=new int[3]{0,256,256};
 	byte[] labelmap;
 	
@@ -23,6 +25,18 @@ public class IntelPerC : MonoBehaviour {
 	
 	string dictation="DUNNO";
 	
+	public bool GetCameraStatus(){
+		return cameraFound;	
+	}
+	
+	public bool GetClosedCertain(){
+		if(openness<5&&openness>=0&&confidence>80)return true;
+		else return false;
+	}
+	public bool GetOpenCertain(){
+		if(confidence>80&&openness>80)return true;
+		else return false;
+	}
 	public int GetOpenness(){
 		return openness;
 	}
@@ -48,8 +62,10 @@ public class IntelPerC : MonoBehaviour {
 		
 		if (!pp.Init(mode)) {
 			print("Unable to initialize the PXCUPipeline");
+			cameraFound=false;
 			return;
 		}
+		cameraFound=true;
 		
         if (pp.QueryLabelMapSize(size))
 	        print("LabelMap: width=" + size[0] + ", height=" + size[1]);
@@ -67,12 +83,12 @@ public class IntelPerC : MonoBehaviour {
 	void Update () {
 		if (!pp.AcquireFrame(false)) return;
 
-		/*if (pp.QueryLabelMapAsImage(m_Texture)) 
-			m_Texture.Apply();	*/	
+		if (pp.QueryLabelMapAsImage(m_Texture)) 
+			m_Texture.Apply();	
 			
-		int[] labels=new int[3]{0,256,256};
+		/*int[] labels=new int[3]{0,256,256};
 		pp.QueryLabelMap(labelmap,labels);
-		shm.ProcessTexture(m_Texture,labels,labelmap);	
+		shm.ProcessTexture(m_Texture,labels,labelmap);	*/
 	   			
 		/*
 		 * GeoNode 
