@@ -1,15 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Core\MoveSelector.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="README.md">
     <Files>
       <File FileName="..\..\..\..\Program Files (x86)\Intel\PCSDK\demo\GlassBalls\Assets\Scripts\ShadowHand.cs" Line="55" Column="5" />
-      <File FileName="Assets\Core\MoveSelector.cs" Line="23" Column="27" />
-      <File FileName="Assets\Core\SelectableObject.cs" Line="38" Column="30" />
-      <File FileName="Assets\Core\TheShelfManager.cs" Line="39" Column="16" />
-      <File FileName="Assets\Core\GestureControllers\IntelPerC.cs" Line="29" Column="21" />
-      <File FileName="Assets\Core\Primitives3D\PrimitivesDictionary.cs" Line="1" Column="1" />
-      <File FileName="Assets\Core\Primitives3D\ThePrimitives.cs" Line="1" Column="1" />
-      <File FileName="Assets\Core\Primitives3D\ShowcaseCurrent.cs" Line="36" Column="6" />
+      <File FileName="README.md" Line="8" Column="69" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
