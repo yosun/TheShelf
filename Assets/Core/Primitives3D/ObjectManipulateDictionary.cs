@@ -16,6 +16,8 @@ public class ObjectManipulateDictionary : MonoBehaviour {
 			s="ROTATE";
 		}else if(s=="freeze"||s=="free"||s=="please"||s=="busy"||s=="stop"||s=="stock"||s=="stalk"){
 			s="FREEZE";
+		}else if(s=="properties"||s=="property"||s=="prop ritty"){
+			s="PROPERTIES";
 		}else 
 			s="UNKNOWN";
 		

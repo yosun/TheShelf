@@ -13,7 +13,7 @@ public class ShowcaseCurrent : MonoBehaviour {
 	
 	public GameObject goVFontDir;
 	
-	public GameObject goBGFade;
+	public GameObject goBGFade; public GameObject goProperties;
 	public Camera cam;
 	
 	TheShelfManager tsm;
@@ -29,6 +29,8 @@ public class ShowcaseCurrent : MonoBehaviour {
 			cam.fieldOfView=12;
 			goBGFade.renderer.enabled=false;
 			goVFontDir.active=false;
+			goProperties.renderer.enabled=false;
+			rotateDir=Vector3.zero;
 		}else{
 			if(!ipc.GetCameraStatus()){
 				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -42,9 +44,18 @@ public class ShowcaseCurrent : MonoBehaviour {
 				if(s!="UNKNOWN"){print ("S "+s);
 					if(s=="ROTATE"){
 						rotateDir = new Vector3(0,1f,0);
+						 goProperties.renderer.enabled=false;
 					}else if(s=="FREEZE"){
 						rotateDir = Vector3.zero;
+						 goProperties.renderer.enabled=false;
+					}else if(s=="PROPERTIES"){
+						GameObject go = tsm.GetCurrentObj();
+						string n = go.name;
+						if(n=="Dodecahedron"||n=="Decahedron"||n=="Icosahedron"||n=="Octahedron"){
+							goProperties.renderer.enabled=true;	
+						}else goProperties.renderer.enabled=false;
 					}else{
+						 goProperties.renderer.enabled=false;
 						string[] sarr = s.Split ("|"[0]);
 						if(sarr[0]=="ROTATE"){
 							if(sarr[1]=="X"){
