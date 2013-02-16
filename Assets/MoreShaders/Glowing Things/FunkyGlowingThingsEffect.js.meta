@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 5e13426dae4964c138d8808a27a146df
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - colorRamp: {fileID: 2800000, guid: fc7300c3510f74728b53928e70140998, type: 1}
+  - blurRamp: {fileID: 2800000, guid: 9aac4f6386b584dce862946578612ac8, type: 1}
+  - compositeShader: {fileID: 4800000, guid: 0e0a4926182054f03b7bf3fe731616a8, type: 1}
+  - renderThingsShader: {fileID: 4800000, guid: 1679992a5339b44398fdd9b3d10b3d81,
+      type: 1}
+  executionOrder: 0
+  icon: {instanceID: 0}

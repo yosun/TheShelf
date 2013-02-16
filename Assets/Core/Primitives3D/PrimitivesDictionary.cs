@@ -16,6 +16,8 @@ public class PrimitivesDictionary : MonoBehaviour {
 		else if(s=="taurus"||s=="prius"||s=="dutchess"||s=="tires")return "Torus";
 		else if(s=="cube"||s=="queued"||s=="cuba")return "Cube";
 		else if(s=="cone"||s=="com")return "Cone";
+		else if(s=="graphite")return "GRAPHITE";
+		else if(s=="cartoon")return "CARTOON";
 		else return "DUNNO";
 	}
 	

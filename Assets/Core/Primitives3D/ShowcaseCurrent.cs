@@ -16,6 +16,8 @@ public class ShowcaseCurrent : MonoBehaviour {
 	public GameObject goBGFade; public GameObject goProperties;
 	public Camera cam;
 	
+	bool said=false;
+	
 	TheShelfManager tsm;
 	
 	void Start(){
@@ -31,6 +33,7 @@ public class ShowcaseCurrent : MonoBehaviour {
 			goVFontDir.active=false;
 			goProperties.renderer.enabled=false;
 			rotateDir=Vector3.zero;
+			said=false;
 		}else{
 			if(!ipc.GetCameraStatus()){
 				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -42,12 +45,13 @@ public class ShowcaseCurrent : MonoBehaviour {
 				string s = ObjectManipulateDictionary.SanitizeDictation(ipc.GetDictation ());
 				ipc.ResetDictation();
 				if(s!="UNKNOWN"){print ("S "+s);
+					said=true;
 					if(s=="ROTATE"){
 						rotateDir = new Vector3(0,1f,0);
 						 goProperties.renderer.enabled=false;
 					}else if(s=="FREEZE"){
 						rotateDir = Vector3.zero;
-						 goProperties.renderer.enabled=false;
+						goProperties.renderer.enabled=false;
 					}else if(s=="PROPERTIES"){
 						GameObject go = tsm.GetCurrentObj();
 						string n = go.name;
@@ -70,8 +74,11 @@ public class ShowcaseCurrent : MonoBehaviour {
 				}
 				if(rotateDir!=Vector3.zero)
 					tsm.GetCurrentObj().transform.Rotate (rotateDir*Time.deltaTime*20f);
-				else
-					tsm.GetCurrentObj().transform.up = -ipc.GetNormal ();
+				else{
+					if(!said)
+						tsm.GetCurrentObj().transform.up = -ipc.GetNormal ();
+					
+				}
 				//if(rotateDir!=Vector3.zero)print (tsm.GetCurrentObj().transform.name+" "+rotateDir + " "+tsm.GetCurrentObj().transform.rotation);
 			}
 			
