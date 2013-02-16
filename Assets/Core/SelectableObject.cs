@@ -6,6 +6,8 @@ public class SelectableObject : MonoBehaviour {
 	IntelPerC ipc;
 	TheShelfManager tsm;
 	
+	public bool delayReturn=false;
+	
 	void Start(){
 		ipc = GameObject.Find ("ReflectiveTexture").GetComponent<IntelPerC>();
 		tsm = GameObject.Find ("GameObject").GetComponent<TheShelfManager>();
@@ -16,10 +18,10 @@ public class SelectableObject : MonoBehaviour {
 			//if(ipc.GetConfidence()>50){
 				if(ipc.GetClosedCertain()){
 					SelectThisObject ();
-				}else if(ipc.GetOpenCertain()){
+				}/*else if(ipc.GetOpenCertain()){
 					tsm.PutBack();
 					return;
-				}
+				}*/
 			//}
 		}
 	}
@@ -28,8 +30,9 @@ public class SelectableObject : MonoBehaviour {
 			if(tsm.GetCurrentObj()==this.gameObject){
 				
 				//transform.position = col.transform.position;
-				if(ipc.GetOpenCertain()){
-					tsm.PutBack();
+				if(ipc.GetOpenCertain()){//print ("BOO");
+					if(!delayReturn)
+						tsm.PutBack();
 					return;
 				}
 			}		

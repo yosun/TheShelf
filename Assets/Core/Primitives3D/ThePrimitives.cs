@@ -11,7 +11,9 @@ public class ThePrimitives : MonoBehaviour {
 	
 	public Camera cam;
 	
-	public GameObject goParent;
+	public GameObject goParent; 
+	
+	float voiceOverride=0f;
 		
 	void Start(){
 		ipc = GetComponent<IntelPerC>();
@@ -19,8 +21,14 @@ public class ThePrimitives : MonoBehaviour {
 	}
 	
 	void Update(){
-		if(tsm.GetCurrentObj()!=null)
+		if(tsm.GetCurrentObj()!=null){
+			voiceOverride-=Time.deltaTime;
+			if(voiceOverride>0)
+				tsm.GetCurrentObj().GetComponent<SelectableObject>().delayReturn=true;
+			else 
+				tsm.GetCurrentObj().GetComponent<SelectableObject>().delayReturn=false;
 			return;
+		}
 		
 		string s = PrimitivesDictionary.SanitizeDictation(ipc.GetDictation ());
 		ipc.ResetDictation();
@@ -32,8 +40,9 @@ public class ThePrimitives : MonoBehaviour {
 			if(s!="DUNNO"){
 				print ("Finding "+s);
 				GameObject go = goParent.transform.Find (s).gameObject;	
-				if(go!=null){
+				if(go!=null){print ("Found "+s);
 					tsm.SetCurrent(go);
+					voiceOverride=5f;
 				}else print ("Cannot find "+s);
 			}
 		}
