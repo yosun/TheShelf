@@ -82,6 +82,7 @@
      <Compile Include="Assets\iTween\Sample\RotateSample.cs" />
      <Compile Include="Assets\iTween\Sample\SampleInfo.cs" />
      <Compile Include="Assets\scrawl\testpiechart.cs" />
+     <Compile Include="Assets\scrawl\testzorro.cs" />
      <None Include="Assets\Shaders\ChickensShaderBundle\Shaders\Mobile\Free\SHOnly.shader" />
      <None Include="Assets\Shaders\ChickensShaderBundle\Shaders\3.5\Cartoony_outline_cutout.shader" />
      <None Include="Assets\Shaders\ChickensShaderBundle\Shaders\3.5\Bumped_Ind_Specular.shader" />

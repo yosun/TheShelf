@@ -27,9 +27,13 @@ public class MoveSelector : MonoBehaviour {
 			return;
 		}
 		if(ipc.GetCameraStatus()){
-			Vector3 v = ipc.GetWorldPosition() * 30;
-			MoveMe(v);
+			if(ipc.GetConfidence()>55){
+				Vector3 v = ipc.GetWorldPosition() * 30;
+				MoveMe(v);
+			}
 		}else{
+			
+			// backup for no camera
 			if(Input.GetMouseButtonDown(0)){
 				if(currentImpact!=null)	
 					currentImpact.GetComponent<SelectableObject>().SelectThisObject();	
@@ -40,6 +44,7 @@ public class MoveSelector : MonoBehaviour {
 			if(Physics.Raycast(ray,out hit,1000f)){
 				MoveMe(hit.point);
 			}
+			
 		}
 	}
 	

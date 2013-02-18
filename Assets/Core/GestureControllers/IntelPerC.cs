@@ -32,7 +32,6 @@ public class IntelPerC : MonoBehaviour {
 	public bool GetCameraStatus(){
 		return cameraFound;	
 	}
-	
 	public uint GetFaceConfidence(){
 		return faceConfidence;	
 	}
@@ -109,7 +108,7 @@ public class IntelPerC : MonoBehaviour {
 				faceConfidence = datafacedetect.confidence;
 				faceViewAngle = datafacedetect.viewAngle;
 				faceRectCenter = new Vector2(datafacedetect.rectangle.x,datafacedetect.rectangle.y);
-				print (faceRectCenter+" "+faceConfidence);
+				//print (faceRectCenter+" "+faceConfidence);
 			}
 		}
 		/*
