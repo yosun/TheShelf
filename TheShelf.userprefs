@@ -1,23 +1,20 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MoreShaders\Edge Detection\EdgeDetectEffectNormals.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Core\GestureControllers\IntelPerC.cs">
     <Files>
-      <File FileName="..\..\..\..\Program Files (x86)\Intel\PCSDK\demo\GlassBalls\Assets\Scripts\ShadowHand.cs" Line="55" Column="5" />
-      <File FileName="Assets\Core\MoveSelector.cs" Line="1" Column="1" />
-      <File FileName="Assets\Core\SelectableObject.cs" Line="1" Column="1" />
-      <File FileName="Assets\Core\TheShelfManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Core\GestureControllers\IntelPerC.cs" Line="1" Column="1" />
+      <File FileName="Assets\Core\OS\MoveSelector.cs" Line="1" Column="1" />
+      <File FileName="Assets\Core\Primitives3D\ThePrimitives.cs" Line="1" Column="1" />
+      <File FileName="Assets\Core\GestureControllers\IntelPerC.cs" Line="103" Column="25" />
       <File FileName="Assets\Core\Primitives3D\PrimitivesDictionary.cs" Line="1" Column="1" />
-      <File FileName="Assets\Core\Primitives3D\ThePrimitives.cs" Line="43" Column="32" />
-      <File FileName="Assets\Core\Primitives3D\ShowcaseCurrent.cs" Line="1" Column="1" />
+      <File FileName="Assets\Core\Primitives3D\ShowcaseCurrent.cs" Line="21" Column="22" />
       <File FileName="Assets\Core\Primitives3D\ObjectManipulateDictionary.cs" Line="1" Column="1" />
-      <File FileName="Assets\MoreShaders\Edge Detection\EdgeDetectEffectNormals.js" Line="21" Column="1" />
+      <File FileName="Assets\MoreShaders\Edge Detection\EdgeDetectEffectNormals.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="C:\Users\yosun-win8\Documents\TheShelf\Assets\Core\TheShelfManager.cs" line="24" />
-      <Breakpoint file="C:\Users\yosun-win8\Documents\TheShelf\Assets\Core\SelectableObject.cs" line="44" />
+      <Breakpoint file="C:\Users\yosun-win8\Documents\TheShelf\Assets\Core\SelectableObject.cs" line="47" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

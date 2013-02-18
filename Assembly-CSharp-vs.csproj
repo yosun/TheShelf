@@ -46,16 +46,17 @@
   <ItemGroup>
      <Compile Include="Assets\Core\GestureControllers\IntelPerC.cs" />
      <Compile Include="Assets\Core\GestureControllers\ShadowHandMod.cs" />
-     <Compile Include="Assets\Core\MoveSelector.cs" />
+     <Compile Include="Assets\Core\OS\MoveSelector.cs" />
+     <Compile Include="Assets\Core\OS\SelectableObject.cs" />
+     <Compile Include="Assets\Core\OS\TheShelfManager.cs" />
+     <Compile Include="Assets\Core\OS\TheShelfMovers.cs" />
+     <Compile Include="Assets\Core\OS\Zorro.cs" />
      <Compile Include="Assets\Core\Primitives3D\ObjectManipulateDictionary.cs" />
      <Compile Include="Assets\Core\Primitives3D\PolyhedraDictionary.cs" />
      <Compile Include="Assets\Core\Primitives3D\PrimitivesDictionary.cs" />
      <Compile Include="Assets\Core\Primitives3D\ShowcaseCurrent.cs" />
      <Compile Include="Assets\Core\Primitives3D\ThePolyhedra.cs" />
      <Compile Include="Assets\Core\Primitives3D\ThePrimitives.cs" />
-     <Compile Include="Assets\Core\SelectableObject.cs" />
-     <Compile Include="Assets\Core\TheShelfManager.cs" />
-     <Compile Include="Assets\Core\TheShelfMovers.cs" />
      <Compile Include="Assets\Core\Utils\PlayThruChildren.cs" />
      <Compile Include="Assets\Core\Utils\VelocityReader.cs" />
      <Compile Include="Assets\MoreShaders\Edge Detection\EdgeDetectFXNormals.cs" />

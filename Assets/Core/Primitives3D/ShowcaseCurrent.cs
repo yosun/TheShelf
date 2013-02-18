@@ -18,12 +18,16 @@ public class ShowcaseCurrent : MonoBehaviour {
 	
 	bool said=false;
 	
+	VFontBehavior vfont; Vector3 posVFont0;
+	
 	TheShelfManager tsm;
 	
 	void Start(){
 		tsm = GetComponent<TheShelfManager>();	
 		goVFont = GameObject.Find ("VFont").gameObject;
 		ipc = GameObject.Find ("ReflectiveTexture").GetComponent<IntelPerC>();
+		vfont = goVFont.GetComponent<VFontBehavior>();
+		posVFont0 = vfont.transform.position;		
 	}
 	
 	void Update(){
@@ -34,7 +38,9 @@ public class ShowcaseCurrent : MonoBehaviour {
 			goProperties.renderer.enabled=false;
 			rotateDir=Vector3.zero;
 			said=false;
+			vfont.text = "Select or Say a Name";vfont.transform.position = posVFont0;
 		}else{
+			vfont.text = tsm.GetCurrentObj().name;
 			if(!ipc.GetCameraStatus()){
 				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 				RaycastHit hit;

@@ -10,11 +10,15 @@ public class IntelPerC : MonoBehaviour {
 	public Texture2D 			m_Texture;
 	private PXCUPipeline 		pp;
     private int[] 				size=new int[2]{0,0};
-	private PXCUPipeline.Mode 	mode=PXCUPipeline.Mode.GESTURE | PXCUPipeline.Mode.VOICE_RECOGNITION;
+	private PXCUPipeline.Mode 	mode=PXCUPipeline.Mode.GESTURE | PXCUPipeline.Mode.VOICE_RECOGNITION | PXCUPipeline.Mode.FACE_LOCATION ;
 	
 	int openness=-1; int confidence=0;
 	Vector3 worldPosition=Vector3.zero;
 	Vector3 normal=Vector3.zero;
+	
+	uint faceConfidence=0;
+	PXCMFaceAnalysis.Detection.ViewAngle faceViewAngle=PXCMFaceAnalysis.Detection.ViewAngle.VIEW_ANGLE_OMNI;
+	Vector2 faceRectCenter=Vector2.zero;
 	
 	bool cameraFound=false;
 	
@@ -27,6 +31,13 @@ public class IntelPerC : MonoBehaviour {
 	
 	public bool GetCameraStatus(){
 		return cameraFound;	
+	}
+	
+	public uint GetFaceConfidence(){
+		return faceConfidence;	
+	}
+	public Vector2 GetFaceRectCenter(){
+		return faceRectCenter;	
 	}
 	
 	public bool GetClosedCertain(){
@@ -64,8 +75,8 @@ public class IntelPerC : MonoBehaviour {
 			print("Unable to initialize the PXCUPipeline");
 			cameraFound=false;
 			return;
-		}
-		cameraFound=true;
+		}else 
+			cameraFound=true;
 		
         if (pp.QueryLabelMapSize(size))
 	        print("LabelMap: width=" + size[0] + ", height=" + size[1]);
@@ -90,6 +101,17 @@ public class IntelPerC : MonoBehaviour {
 		pp.QueryLabelMap(labelmap,labels);
 		shm.ProcessTexture(m_Texture,labels,labelmap);	*/
 	   			
+		// face stuff
+		int face; ulong timestamp;
+		if(pp.QueryFaceID(0,out face,out timestamp)){
+			PXCMFaceAnalysis.Detection.Data datafacedetect;
+			if(pp.QueryFaceLocationData(face,out datafacedetect)){
+				faceConfidence = datafacedetect.confidence;
+				faceViewAngle = datafacedetect.viewAngle;
+				faceRectCenter = new Vector2(datafacedetect.rectangle.x,datafacedetect.rectangle.y);
+				print (faceRectCenter+" "+faceConfidence);
+			}
+		}
 		/*
 		 * GeoNode 
 		 * timeStamp
